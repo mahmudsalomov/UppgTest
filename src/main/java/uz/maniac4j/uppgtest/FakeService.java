@@ -15,17 +15,17 @@ import java.util.List;
 @Service
 public class FakeService {
 
-    @Value("${spring.datasource.url}")
-    private String postgresqlUrl;
+//    @Value("${spring.datasource.url}")
+//    private String postgresqlUrl;
     public static void main(String[] args) {
         Date date=new Date();
         System.out.println(date.getMinutes());
 //        String url="jdbc:sqlserver://192.168.10.20:1433;database=UPPG";
 //        String userDB="UPPGReader", pass="97F88FA06BB691C96D3B46CC3252452369F4ACEB5E076CFACF4B7BF4B5370A5A43B57702334D3C31";
 //        all(url,userDB,pass);
-        FakeService fakeService=new FakeService();
-        List<FakeUppg> all = fakeService.all();
-        System.out.println(all);
+//        FakeService fakeService=new FakeService();
+//        List<FakeUppg> all = fakeService.all();
+//        System.out.println(all);
     }
 
     public List<FakeUppg> all(){
@@ -34,11 +34,11 @@ public class FakeService {
         return all(url,userDB,pass);
     }
 
-    public List<FakeUppg> allSimulator(){
-//        String url="jdbc:postgresql://localhost:5433/neftgaz";
-        String userDB="postgres", pass="postgres";
-        return allSimulator(postgresqlUrl,userDB,pass);
-    }
+//    public List<FakeUppg> allSimulator(){
+////        String url="jdbc:postgresql://localhost:5433/neftgaz";
+//        String userDB="postgres", pass="postgres";
+//        return allSimulator(postgresqlUrl,userDB,pass);
+//    }
 
     @Transactional
     public List<FakeUppg> all(String url,String username,String password){
