@@ -2,6 +2,7 @@ package uz.maniac4j.uppgtest;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,7 +40,7 @@ public class FakeService {
         return allSimulator(postgresqlUrl,userDB,pass);
     }
 
-//    @Transactional
+    @Transactional
     public List<FakeUppg> all(String url,String username,String password){
         List<FakeUppg> list=new ArrayList<>();
 
@@ -162,7 +163,7 @@ public class FakeService {
 
 
 
-//@Transactional
+    @Transactional
     public List<FakeUppg> allSimulator(String url,String username,String password){
         List<FakeUppg> list=new ArrayList<>();
 
